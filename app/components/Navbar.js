@@ -3,7 +3,13 @@ import { Inter } from "next/font/google"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { useState } from "react"
-
+import {
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs'
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
 export default function Navbar() {
@@ -15,12 +21,15 @@ export default function Navbar() {
         <div className="font-semibold text-xl  hover:text-gray-300 transition duration-100 ease-in-out">
           StudySprint
         </div>
-        <Link 
-          href="/auth" 
-          className="text-sm px-36 font-light relative group hover:text-gray-300 transition duration-100 ease-in-out"
-        >
-          Sign-up
-        </Link>
+        
+        <div className="text-sm px-36 font-light relative group hover:text-gray-300 transition duration-100 ease-in-out">
+        <SignedOut>
+              <SignInButton />
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+        </div>
       </div>
 
       <div className={`md:hidden px-6 text-white flex items-center justify-between ${inter.className} py-8`}>
