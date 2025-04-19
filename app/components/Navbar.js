@@ -15,7 +15,6 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [dropdownOpen, setDropdownOpen] = useState(false)
 
   // Handle scroll effect
   useEffect(() => {
@@ -51,8 +50,6 @@ export default function Navbar() {
                   aria-label="Notifications" 
                   className="text-white/80 hover:text-white transition-colors duration-300 p-2 relative"
                 >
-                  <Bell className="w-5 h-5" />
-                  <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
                 </button>
                 <UserButton 
                   afterSignOutUrl="/" 
