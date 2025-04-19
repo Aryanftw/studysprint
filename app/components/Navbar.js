@@ -38,73 +38,13 @@ export default function Navbar() {
           <div className="hidden md:flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="font-bold text-xl text-white flex items-center group">
-              <span className="bg-gradient-to-r from-[#E5CBD6] to-[#BAD1F7] bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300">
+              <span className="bg-gradient-to-r from-[#E5CBD6] to-[#BAD1F7] bg-clip-text text-transparent group-hover:scale-95 transition-transform duration-300">
                 StudySprint
               </span>
             </Link>
             
-            {/* Navigation Links */}
-            <div className="flex items-center space-x-8">
-              <Link href="/features" className="text-white/80 hover:text-white text-sm font-medium transition-colors duration-300 relative group">
-                Features
-                <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
-              </Link>
-              
-              <div className="relative group">
-                <button 
-                  onClick={() => setDropdownOpen(!dropdownOpen)}
-                  className="text-white/80 hover:text-white text-sm font-medium transition-colors duration-300 flex items-center"
-                >
-                  Resources
-                  <ChevronDown className="w-4 h-4 ml-1 group-hover:rotate-180 transition-transform duration-300" />
-                </button>
-                
-                {dropdownOpen && (
-                  <div className="absolute top-full right-0 mt-2 w-56 rounded-md shadow-lg bg-gray-900 ring-1 ring-black ring-opacity-5 focus:outline-none py-1">
-                    <Link 
-                      href="/blog" 
-                      className="block px-4 py-2 text-sm text-white/80 hover:bg-gray-800 hover:text-white transition-colors duration-300"
-                      onClick={() => setDropdownOpen(false)}
-                    >
-                      Blog
-                    </Link>
-                    <Link 
-                      href="/guides" 
-                      className="block px-4 py-2 text-sm text-white/80 hover:bg-gray-800 hover:text-white transition-colors duration-300"
-                      onClick={() => setDropdownOpen(false)}
-                    >
-                      Study Guides
-                    </Link>
-                    <Link 
-                      href="/webinars" 
-                      className="block px-4 py-2 text-sm text-white/80 hover:bg-gray-800 hover:text-white transition-colors duration-300"
-                      onClick={() => setDropdownOpen(false)}
-                    >
-                      Webinars
-                    </Link>
-                  </div>
-                )}
-              </div>
-              
-              <Link href="/pricing" className="text-white/80 hover:text-white text-sm font-medium transition-colors duration-300 relative group">
-                Pricing
-                <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
-              </Link>
-              
-              <Link href="/about" className="text-white/80 hover:text-white text-sm font-medium transition-colors duration-300 relative group">
-                About
-                <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
-              </Link>
-            </div>
-            
-            {/* Auth and User Actions */}
             <div className="flex items-center space-x-4">
-              <button 
-                aria-label="Search" 
-                className="text-white/80 hover:text-white transition-colors duration-300 p-2"
-              >
-                <Search className="w-5 h-5" />
-              </button>
+              
               
               <SignedIn>
                 <button 
@@ -132,11 +72,7 @@ export default function Navbar() {
                     </button>
                   </SignInButton>
                   
-                  <SignUpButton>
-                    <button className="bg-gradient-to-r from-[#E5CBD6] to-[#BAD1F7] text-[#01010a] font-medium px-4 py-2 rounded-lg text-sm hover:shadow-lg transition-all duration-300">
-                      Get Started
-                    </button>
-                  </SignUpButton>
+                  
                 </div>
               </SignedOut>
             </div>
@@ -189,30 +125,7 @@ export default function Navbar() {
           >
             Home
           </Link>
-          
-          <Link 
-            href="/features" 
-            className="text-2xl font-medium text-white hover:text-gray-300 transition-colors"
-            onClick={() => setIsOpen(false)}
-          >
-            Features
-          </Link>
-          
-          <Link 
-            href="/resources" 
-            className="text-2xl font-medium text-white hover:text-gray-300 transition-colors"
-            onClick={() => setIsOpen(false)}
-          >
-            Resources
-          </Link>
-          
-          <Link 
-            href="/pricing" 
-            className="text-2xl font-medium text-white hover:text-gray-300 transition-colors"
-            onClick={() => setIsOpen(false)}
-          >
-            Pricing
-          </Link>
+         
           
           <Link 
             href="/about" 
@@ -230,11 +143,7 @@ export default function Navbar() {
                 </button>
               </SignInButton>
               
-              <SignUpButton>
-                <button className="bg-gradient-to-r from-[#E5CBD6] to-[#BAD1F7] text-[#01010a] font-medium px-8 py-3 rounded-lg text-lg hover:opacity-90 transition-opacity duration-300">
-                  Get Started
-                </button>
-              </SignUpButton>
+              
             </div>
           </SignedOut>
         </div>

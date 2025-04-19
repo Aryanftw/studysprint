@@ -26,13 +26,11 @@ export default function HeroSection() {
         overflow-hidden
       `}
     >
-      {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full">
         <div className="absolute top-12 left-12 w-32 h-32 rounded-full bg-white/5 blur-xl"></div>
         <div className="absolute bottom-12 right-12 w-48 h-48 rounded-full bg-white/5 blur-xl"></div>
       </div>
 
-      {/* Content Container */}
       <div 
         className="relative z-10 max-w-4xl mx-auto transition-all duration-1000"
         style={{ 
@@ -40,7 +38,6 @@ export default function HeroSection() {
           transform: isVisible ? 'translateY(0)' : 'translateY(20px)'
         }}
       >
-        {/* Heading */}
         <div 
           className="font-bold text-4xl sm:text-5xl md:text-6xl leading-tight space-y-2 mb-8 transition-opacity duration-1000 delay-300"
           style={{ opacity: isVisible ? 1 : 0 }}
@@ -49,7 +46,6 @@ export default function HeroSection() {
           <p className="tracking-tight">One Sprint at a Time.</p>
         </div>
 
-        {/* Description */}
         <div 
           className="space-y-4 text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed max-w-2xl mx-auto mb-12 transition-opacity duration-1000 delay-500"
           style={{ opacity: isVisible ? 1 : 0 }}
@@ -62,7 +58,6 @@ export default function HeroSection() {
           </p>
         </div>
 
-        {/* CTA Buttons */}
         <div 
           className="flex flex-col sm:flex-row items-center justify-center gap-4 transition-opacity duration-1000 delay-700"
           style={{ opacity: isVisible ? 1 : 0 }}
@@ -80,17 +75,12 @@ export default function HeroSection() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
           </button>
-          
-          <a href="#learn-more" className="text-gray-300 hover:text-white underline-offset-4 hover:underline transition-all px-4 py-2">
-            Learn more
-          </a>
         </div>
         
         
         
       </div>
       
-      {/* Scroll Indicator */}
       <div 
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-opacity duration-1000 delay-1000"
         style={{ opacity: isVisible ? 1 : 0 }}
