@@ -1,7 +1,7 @@
 'use client'
 import { Inter } from "next/font/google";
 import { useState, useEffect } from "react";
-
+import Link from "next/link";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export default function HeroSection() {
@@ -62,7 +62,7 @@ export default function HeroSection() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 transition-opacity duration-1000 delay-700"
           style={{ opacity: isVisible ? 1 : 0 }}
         >
-          <button className="cursor-pointer group
+          <Link href="/dashboard" className="cursor-pointer group
             px-8 py-4 w-64 sm:w-auto rounded-full bg-gradient-to-r from-[#E5CBD6] to-[#BAD1F7] 
             text-[#101010] font-medium text-lg
             hover:shadow-lg transition-all duration-300 flex items-center justify-center">
@@ -74,7 +74,7 @@ export default function HeroSection() {
                  fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
-          </button>
+          </Link> 
         </div>
         
         

@@ -42,17 +42,35 @@ export default function Navbar() {
               </span>
             </Link>
             
-            <div className="flex items-center space-x-4">
-              
-              
-              <SignedIn>
-                <button 
-                  aria-label="Notifications" 
-                  className="text-white/80 hover:text-white transition-colors duration-300 p-2 relative"
+            {/* Navigation Links - Show only when signed in */}
+            <SignedIn>
+              <div className="flex items-center space-x-8">
+                <Link 
+                  href="/pomodoro" 
+                  className="text-white/80 hover:text-white transition-colors duration-300 text-sm font-medium"
                 >
-                </button>
+                  Pomodoro Timer
+                </Link>
+                <Link 
+                  href="/group-study" 
+                  className="text-white/80 hover:text-white transition-colors duration-300 text-sm font-medium"
+                >
+                  Group Study
+                </Link>
+                <Link 
+                  href="/dashboard" 
+                  className="text-white/80 hover:text-white transition-colors duration-300 text-sm font-medium"
+                >
+                  Dashboard
+                </Link>
+               
+              </div>
+            </SignedIn>
+            
+            <div className="flex items-center space-x-4">
+              <SignedIn>
+                
                 <UserButton 
-                  afterSignOutUrl="/" 
                   appearance={{
                     elements: {
                       userButtonAvatarBox: "border-2 border-white hover:border-[#BAD1F7] transition-colors duration-300"
@@ -68,8 +86,11 @@ export default function Navbar() {
                       Sign In
                     </button>
                   </SignInButton>
-                  
-                  
+                  <SignUpButton>
+                    <button className="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-md transition-colors duration-300 text-sm font-medium">
+                      Sign Up
+                    </button>
+                  </SignUpButton>
                 </div>
               </SignedOut>
             </div>
@@ -85,6 +106,9 @@ export default function Navbar() {
             
             <div className="flex items-center space-x-3">
               <SignedIn>
+                <button className="p-2 text-white/80 hover:text-white transition-colors">
+                  <Bell className="h-5 w-5" />
+                </button>
                 <UserButton afterSignOutUrl="/" />
               </SignedIn>
               
@@ -122,7 +146,32 @@ export default function Navbar() {
           >
             Home
           </Link>
-         
+          
+          <SignedIn>
+            <Link 
+              href="/pomodoro" 
+              className="text-2xl font-medium text-white hover:text-gray-300 transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              Pomodoro Timer
+            </Link>
+            
+            <Link 
+              href="/group-study" 
+              className="text-2xl font-medium text-white hover:text-gray-300 transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              Group Study
+            </Link>
+            
+            <Link 
+              href="/flashcards" 
+              className="text-2xl font-medium text-white hover:text-gray-300 transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              Flashcards
+            </Link>
+          </SignedIn>
           
           <Link 
             href="/about" 
@@ -140,7 +189,11 @@ export default function Navbar() {
                 </button>
               </SignInButton>
               
-              
+              <SignUpButton>
+                <button className="bg-white text-black hover:bg-white/90 transition-colors duration-300 px-8 py-3 rounded-lg text-lg">
+                  Sign Up
+                </button>
+              </SignUpButton>
             </div>
           </SignedOut>
         </div>
